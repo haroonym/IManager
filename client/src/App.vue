@@ -7,37 +7,37 @@
         </v-toolbar-title>
         <h3 class="black--text">iManager</h3>
       </v-app-bar>
-      <v-container> <router-view /></v-container>
+      <v-container> <router-view :products="products" /></v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 export default {
   name: 'App',
-  // serverAddress: process.env.VUE_APP_SERVER,
-  data: () => ({
-    //
-  }),
   created() {
     document.addEventListener('swUpdated', this.updateAvailable, { once: true });
+    this.getProducts();
+  },
+  data() {
+    return { products: [] };
   },
   methods: {
     updateAvailable() {
       alert('Update vorhanden, bitte App neu starten!');
     },
-    // async getItems() {
-    //   try {
-    //     const { data } = await axios({
-    //       url: this.serverAddress + '/items',
-    //       method: 'GET',
-    //     });
-    //     this.items = data;
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // },
+    async getProducts() {
+      try {
+        const { data } = await axios({
+          url: 'http://localhost:3000/products',
+          method: 'GET',
+        });
+        this.products = data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
   },
 };
 </script>
