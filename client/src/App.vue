@@ -20,7 +20,13 @@ export default {
   data: () => ({
     //
   }),
+  created() {
+    document.addEventListener('swUpdated', this.updateAvailable, { once: true });
+  },
   methods: {
+    updateAvailable() {
+      alert('Update vorhanden, bitte App neu starten!');
+    },
     // async getItems() {
     //   try {
     //     const { data } = await axios({

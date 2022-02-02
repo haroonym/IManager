@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="text-h5 text-center mt-2">Yuhuuu Geschafft!!!</p>
+    <p class="text-h5 text-center mt-2">PWA ist ultra cool!!!</p>
   </div>
 </template>
 
