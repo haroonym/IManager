@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <v-data-table
-        class="elevation-4 mt-5"
+        class="elevation-4 mt-5 red--text"
         max-width="100px"
         :headers="headers"
         :items="products"
