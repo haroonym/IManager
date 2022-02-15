@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Products from '../views/Products.vue';
+import Scan from '../views/Scan.vue';
 
 Vue.use(VueRouter);
 
@@ -23,6 +24,11 @@ const routes = [
     path: '/products',
     name: 'Products',
     component: Products,
+  },
+  {
+    path: '/scan',
+    name: 'Scan',
+    component: Scan,
   },
 ];
 

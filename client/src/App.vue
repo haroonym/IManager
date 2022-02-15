@@ -4,9 +4,11 @@
       <v-toolbar-title>
         <v-img src="./assets/imanager.png" width="50px" class="mr-3"></v-img>
       </v-toolbar-title>
-      <h3 class="black--text">iManager</h3>
+      <h3 class="font-weight-light black--text">iManager</h3>
+      <v-spacer></v-spacer>
+      <v-btn outlined style="color: #F1333F" to="/">Home</v-btn>
     </v-app-bar>
-    <v-main style="position:relative">
+    <v-main style="position: relative">
       <v-container> <router-view :products="products" /></v-container>
     </v-main>
   </v-app>

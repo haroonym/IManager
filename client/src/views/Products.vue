@@ -1,8 +1,10 @@
 <template>
   <div>
     <v-container>
+      <p class="font-weight-bold text-h5 text-center mt-2 red--text">Inventar</p>
       <v-data-table
-        class="elevation-4 mt-5 red--text"
+        class="elevation-4 mt-5"
+        style="color: #F1333F"
         max-width="100px"
         :headers="headers"
         :items="products"
