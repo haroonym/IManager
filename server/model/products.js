@@ -1,3 +1,4 @@
+/* eslint-disable no-else-return */
 /* eslint-disable eqeqeq */
 let products = require('./products.json');
 
@@ -13,4 +14,14 @@ function deleteProduct(barcode) {
   return `Product with the Barcode ${barcode} has been deleted`;
 }
 
-module.exports = { getProducts, deleteProduct };
+function postProduct(c) {
+  const exists = products.find((el) => el.barcode == c.barcode);
+  if (exists) {
+    return `Product with the Barcode ${c.barcode} is already in the List!!!`;
+  } else {
+    products.push(c);
+    return `Product with the Barcode ${c.barcode} has been added`;
+  }
+}
+
+module.exports = { getProducts, deleteProduct, postProduct };

@@ -1,2 +1,12 @@
 GET http://localhost:3000/products
 ################################################################
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "barcode": "9001234567890",
+    "marke": "Mina Mansouri",
+    "produktname": "Minergy",
+    "beschreibung": "Ein Energiedrink, welches beim Programmieren hilft!",
+    "ablaufdatum": "18.02.2022"
+}
