@@ -9,6 +9,7 @@
     "start": "http-server ./dist"
   },
   "dependencies": {
+    "@mdi/font": "^6.5.95",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
@@ -17,6 +18,7 @@
     "vuetify": "^2.4.0"
   },
   "devDependencies": {
+    "@mdi/js": "^6.5.95",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-pwa": "~4.5.0",

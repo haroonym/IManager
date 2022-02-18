@@ -6,10 +6,10 @@
       </v-toolbar-title>
       <h3 class="font-weight-light black--text">iManager</h3>
       <v-spacer></v-spacer>
-      <v-btn outlined style="color: #F1333F" to="/">Home</v-btn>
+      <v-btn outlined style="color: #f1333f" to="/">Home</v-btn>
     </v-app-bar>
     <v-main style="position: relative">
-      <v-container> <router-view :products="products" /></v-container>
+      <v-container> <router-view :products="products" @deleteProduct="deleteProduct" /></v-container>
     </v-main>
   </v-app>
 </template>
@@ -36,6 +36,19 @@ export default {
           method: 'GET',
         });
         this.products = data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    async deleteProduct(value) {
+      try {
+        console.log(value);
+        await axios({
+          url: `http://127.0.0.1:3000/products/${value}`,
+          method: 'DELETE',
+        });
+        // this.products = data;
+        this.getProducts();
       } catch (error) {
         console.error(error);
       }
